@@ -21,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs',
+    redirectTo: '/style-test',
     pathMatch: 'full'
   }
 ];

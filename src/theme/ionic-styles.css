@@ -1,9 +1,14 @@
-/* ================================================================
-   Estilos mínimos para componentes Ionic
-   Los estilos de Tailwind usan las variables CSS globales automáticamente
-   ================================================================ */
+/* Archivo de estilos específicos para Ionic */
 
-/* Solo estilos específicos para componentes Ionic que no se pueden hacer con Tailwind */
+/* Estilos personalizados para la página style-test */
+ion-input.custom-input,
+ion-textarea.custom-input {
+  --padding-start: 0.5rem;
+  --padding-end: 0.5rem;
+  --padding-top: 0.5rem;
+  --padding-bottom: 0.5rem;
+}
+
 ion-button {
   --border-radius: 12px;
   font-weight: 500;
@@ -34,3 +39,5 @@ ion-item {
   --inner-padding-end: 0;
   --inner-padding-start: 0;
 }
+
+/* Agrega aquí otros estilos específicos para Ionic que necesites */

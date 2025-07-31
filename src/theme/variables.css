@@ -110,6 +110,11 @@
   --input-border: 2px solid var(--border-color);
   --input-border-hover: 2px solid var(--border-color-hover);
   --input-border-focus: 2px solid var(--border-color-focus);
+  --input-padding: 0.5rem;
+  --padding-start: 0.5rem;
+  --padding-end: 0.5rem;
+  --padding-top: 0.5rem;
+  --padding-bottom: 0.5rem;
   
   --button-height-sm: 40px;
   --button-height-md: 45px;
@@ -195,6 +200,11 @@
   --input-border: 2px solid var(--border-color);
   --input-border-hover: 2px solid var(--border-color-hover);
   --input-border-focus: 2px solid var(--border-color-focus);
+  --input-padding: 0.5rem;
+  --padding-start: 0.5rem;
+  --padding-end: 0.5rem;
+  --padding-top: 0.5rem;
+  --padding-bottom: 0.5rem;
 }
 
 /* === UTILIDADES PARA ANIMACIONES === */
