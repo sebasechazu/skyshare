@@ -1,0 +1,8 @@
+{
+  "name": "skyshare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "f75f1b99"
+}
