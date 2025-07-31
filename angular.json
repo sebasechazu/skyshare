@@ -18,7 +18,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "css",
             "assets": [
               {
                 "glob": "**/*",
@@ -31,7 +31,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.css", "src/theme/variables.css"],
             "scripts": []
           },
           "configurations": {
@@ -63,9 +63,6 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "ci": {
-              "progress": false
             }
           },
           "defaultConfiguration": "production"
@@ -78,9 +75,6 @@
             },
             "development": {
               "buildTarget": "app:build:development"
-            },
-            "ci": {
-              "progress": false
             }
           },
           "defaultConfiguration": "development"
@@ -98,7 +92,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
+            "inlineStyleLanguage": "css",
             "assets": [
               {
                 "glob": "**/*",
@@ -111,7 +105,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.css", "src/theme/variables.css"],
             "scripts": []
           },
           "configurations": {
@@ -136,14 +130,15 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
-      "styleext": "scss"
+      "styleext": "css"
     },
     "@ionic/angular-toolkit:page": {
-      "styleext": "scss"
+      "styleext": "css"
     }
   }
 }

@@ -1,0 +1,10 @@
+<ion-header><ion-toolbar><ion-title>Login</ion-title></ion-toolbar></ion-header>
+
+<ion-content class="ion-padding">
+  <form (submit)="handleLogin()">
+    <ion-input [(ngModel)]="email" name="email" label="Email" type="email" required></ion-input>
+    <ion-input [(ngModel)]="password" name="password" label="Password" type="password" required></ion-input>
+    <ion-button expand="block" type="submit">Ingresar</ion-button>
+    <ion-button fill="clear" routerLink="/register">Registrarme</ion-button>
+  </form>
+</ion-content>
