@@ -13,4 +13,26 @@
     </ion-toolbar>
   </ion-header>
 
+  <div class="ion-padding">
+    <h2>SkyShare - Demo</h2>
+    <p>Bienvenido a SkyShare, tu plataforma de compartir archivos en la nube.</p>
+    
+    <ion-button 
+      expand="block" 
+      (click)="goToStyleTest()"
+      color="primary">
+      <ion-icon name="palette-outline" slot="start"></ion-icon>
+      Ver Prueba de Estilos
+    </ion-button>
+
+    <ion-button 
+      expand="block" 
+      (click)="goToLogin()"
+      color="secondary"
+      fill="outline">
+      <ion-icon name="log-in-outline" slot="start"></ion-icon>
+      Ir a Login
+    </ion-button>
+  </div>
+
 </ion-content>

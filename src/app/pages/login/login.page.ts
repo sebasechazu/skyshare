@@ -1,16 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { addIcons } from 'ionicons';
+import { 
+  cloudUploadOutline, 
+  mailOutline, 
+  lockClosedOutline, 
+  logInOutline, 
+  personAddOutline 
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.css'],
   standalone: true,
-  imports: [IonicModule, FormsModule, CommonModule]
+  imports: [IonicModule, FormsModule, CommonModule, RouterModule]
 })
 export class LoginPage implements OnInit {
 
@@ -19,7 +27,15 @@ export class LoginPage implements OnInit {
 
   
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {
+    addIcons({ 
+      cloudUploadOutline, 
+      mailOutline, 
+      lockClosedOutline, 
+      logInOutline, 
+      personAddOutline 
+    });
+  }
 
   ngOnInit() {
   }

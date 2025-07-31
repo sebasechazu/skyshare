@@ -1,0 +1,448 @@
+<ion-content style="background: var(--bg-primary); transition: all 0.3s ease;">
+  <div class="min-h-screen p-5">
+    
+    <!-- Header con toggle de tema -->
+    <div class="flex justify-between items-center mb-8 p-6 rounded-2xl border transition-all duration-300" 
+         style="background: var(--bg-secondary); border-color: var(--border-color);">
+      <h1 class="text-3xl font-bold" style="color: var(--text-primary);">🎨 SkyShare Style Test</h1>
+      <ion-button 
+        (click)="toggleTheme()" 
+        fill="clear" 
+        size="large"
+        style="color: var(--color-primary);">
+        <ion-icon [name]="isDark ? 'sunny-outline' : 'moon-outline'" slot="icon-only" class="text-2xl"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Sección: Estado del Tema -->
+    <section class="mb-8 p-6 rounded-2xl border transition-all duration-300" 
+             style="background: var(--bg-secondary); border-color: var(--border-color);">
+      <h2 class="text-2xl font-semibold mb-4 pb-2" 
+          style="color: var(--text-primary); border-bottom: 2px solid var(--color-primary);">🎨 Estado del Tema</h2>
+      <p class="mb-4" style="color: var(--text-secondary);">
+        Tema actual: <span class="font-medium" style="color: var(--color-primary);">{{ isDark ? 'Oscuro 🌙' : 'Claro ☀️' }}</span>
+      </p>
+      <p class="leading-relaxed" style="color: var(--text-muted);">
+        Todos los componentes usan las variables CSS del archivo theme/variables.css y se adaptan automáticamente al tema.
+      </p>
+    </section>
+
+    <!-- Sección: Botones -->
+    <section class="mb-8 p-6 rounded-2xl border transition-all duration-300" 
+             style="background: var(--bg-secondary); border-color: var(--border-color);">
+      <h2 class="text-2xl font-semibold mb-6 pb-2" 
+          style="color: var(--text-primary); border-bottom: 2px solid var(--color-accent);">🔘 Botones</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Botón Primario -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-medium" style="color: var(--text-secondary);">Primario</h3>
+          <ion-button expand="block" 
+                      style="background: var(--gradient-primary); color: var(--text-white); 
+                             border-radius: var(--border-radius-md); box-shadow: var(--shadow-md);
+                             font-weight: var(--font-weight-medium);">
+            <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+            Primario
+          </ion-button>
+        </div>
+
+        <!-- Botón Secundario -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-medium" style="color: var(--text-secondary);">Secundario</h3>
+          <ion-button expand="block" fill="outline" 
+                      style="border: 2px solid var(--color-secondary); color: var(--color-secondary);
+                             border-radius: var(--border-radius-md); font-weight: var(--font-weight-medium);
+                             --background-hover: var(--color-secondary); --color-hover: var(--text-white);">
+            <ion-icon name="bookmark-outline" slot="start"></ion-icon>
+            Secundario
+          </ion-button>
+        </div>
+
+        <!-- Botón de Peligro -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-medium" style="color: var(--text-secondary);">Peligro</h3>
+          <ion-button expand="block" 
+                      style="background: var(--color-danger); color: var(--text-white);
+                             border-radius: var(--border-radius-md); font-weight: var(--font-weight-medium);
+                             box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+                             --background-hover: var(--color-danger-dark);">
+            <ion-icon name="trash-outline" slot="start"></ion-icon>
+            Eliminar
+          </ion-button>
+        </div>
+
+        <!-- Botón Éxito -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-medium" style="color: var(--text-secondary);">Éxito</h3>
+          <ion-button expand="block" 
+                      style="background: var(--color-success); color: var(--text-white);
+                             border-radius: var(--border-radius-md); font-weight: var(--font-weight-medium);
+                             box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+                             --background-hover: var(--color-success-dark);">
+            <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
+            Subir
+          </ion-button>
+        </div>
+
+        <!-- Botón Advertencia -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-medium" style="color: var(--text-secondary);">Advertencia</h3>
+          <ion-button expand="block" 
+                      style="background: var(--color-warning); color: var(--text-white);
+                             border-radius: var(--border-radius-md); font-weight: var(--font-weight-medium);
+                             box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+                             --background-hover: var(--color-warning-dark);">
+            <ion-icon name="warning-outline" slot="start"></ion-icon>
+            Atención
+          </ion-button>
+        </div>
+
+        <!-- Botón Solo Icono -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-medium" style="color: var(--text-secondary);">Solo Icono</h3>
+          <ion-button fill="clear" 
+                      style="color: var(--color-primary); border-radius: var(--border-radius-md);
+                             --background-hover: var(--color-primary-light); --color-hover: var(--color-primary-dark);">
+            <ion-icon name="heart-outline" slot="icon-only" class="text-2xl"></ion-icon>
+          </ion-button>
+        </div>
+
+        <!-- Botón Deshabilitado -->
+        <div class="space-y-2">
+          <h3 class="text-sm font-medium" style="color: var(--text-secondary);">Deshabilitado</h3>
+          <ion-button expand="block" disabled class="opacity-50 cursor-not-allowed">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            Deshabilitado
+          </ion-button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Inputs y Formularios -->
+    <section class="mb-8 p-6 rounded-2xl border transition-all duration-300" 
+             style="background: var(--bg-secondary); border-color: var(--border-color);">
+      <h2 class="text-2xl font-semibold mb-6 pb-2" 
+          style="color: var(--text-primary); border-bottom: 2px solid var(--color-secondary);">📝 Inputs y Formularios</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Input de Texto -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium" style="color: var(--text-secondary);">Nombre de usuario</label>
+          <ion-input 
+            placeholder="Ingresa tu nombre"
+            style="background: var(--input-bg); border: var(--input-border); border-radius: var(--border-radius-md); color: var(--text-primary);">
+          </ion-input>
+        </div>
+
+        <!-- Input de Email -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium" style="color: var(--text-secondary);">Email</label>
+          <ion-input 
+            type="email"
+            placeholder="usuario@ejemplo.com"
+            style="background: var(--input-bg); border: var(--input-border); border-radius: var(--border-radius-md); color: var(--text-primary);">
+          </ion-input>
+        </div>
+
+        <!-- Input de Contraseña -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium" style="color: var(--text-secondary);">Contraseña</label>
+          <ion-input 
+            type="password"
+            placeholder="••••••••"
+            style="background: var(--input-bg); border: var(--input-border); border-radius: var(--border-radius-md); color: var(--text-primary);">
+          </ion-input>
+        </div>
+
+        <!-- Textarea -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium" style="color: var(--text-secondary);">Descripción</label>
+          <ion-textarea 
+            placeholder="Escribe una descripción..."
+            rows="3"
+            style="background: var(--input-bg); border: var(--input-border); border-radius: var(--border-radius-md); color: var(--text-primary);">
+          </ion-textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Cards -->
+    <section class="mb-8 p-6 rounded-2xl border transition-all duration-300" 
+             style="background: var(--bg-secondary); border-color: var(--border-color);">
+      <h2 class="text-2xl font-semibold mb-6 pb-2" 
+          style="color: var(--text-primary); border-bottom: 2px solid var(--color-tertiary);">🃏 Cards</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card Básica -->
+        <ion-card class="rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl" 
+                  style="background: var(--bg-primary); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center" 
+                   style="background: var(--color-primary-light);">
+                <ion-icon name="document-text-outline" class="text-xl" style="color: var(--color-primary);"></ion-icon>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold" style="color: var(--text-primary);">Archivo</h3>
+                <p class="text-sm" style="color: var(--text-muted);">PDF • 2.4 MB</p>
+              </div>
+            </div>
+            <p class="text-sm mb-4" style="color: var(--text-secondary);">Documento importante con información confidencial del proyecto.</p>
+            <div class="flex space-x-2">
+              <ion-button size="small" style="background: var(--color-primary); color: var(--text-white);">
+                <ion-icon name="download-outline" slot="start"></ion-icon>
+                Descargar
+              </ion-button>
+              <ion-button size="small" fill="outline" 
+                          style="border: 1px solid var(--border-color); color: var(--text-secondary);">
+                <ion-icon name="share-outline" slot="start"></ion-icon>
+                Compartir
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+
+        <!-- Card de Usuario -->
+        <ion-card class="rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl" 
+                  style="background: var(--bg-primary); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+          <div class="p-6">
+            <div class="text-center mb-4">
+              <div class="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center" 
+                   style="background: var(--gradient-secondary);">
+                <span class="text-white font-bold text-xl">JD</span>
+              </div>
+              <h3 class="text-lg font-semibold" style="color: var(--text-primary);">Juan Pérez</h3>
+              <p class="text-sm" style="color: var(--text-muted);">Desarrollador Frontend</p>
+            </div>
+            <div class="space-y-2 text-sm">
+              <div class="flex items-center" style="color: var(--text-secondary);">
+                <ion-icon name="mail-outline" class="mr-2"></ion-icon>
+                juan&#64;ejemplo.com
+              </div>
+              <div class="flex items-center" style="color: var(--text-secondary);">
+                <ion-icon name="location-outline" class="mr-2"></ion-icon>
+                Madrid, España
+              </div>
+            </div>
+            <ion-button expand="block" fill="outline" class="mt-4" 
+                        style="border: 1px solid var(--color-secondary); color: var(--color-secondary);">
+              Ver Perfil
+            </ion-button>
+          </div>
+        </ion-card>
+
+        <!-- Card de Estadísticas -->
+        <ion-card class="rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl" 
+                  style="background: var(--gradient-accent); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-lg font-semibold" style="color: var(--text-primary);">Archivos Subidos</h3>
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" 
+                   style="background: var(--color-accent-light);">
+                <ion-icon name="cloud-upload-outline" style="color: var(--color-accent);"></ion-icon>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="text-3xl font-bold" style="color: var(--text-primary);">247</div>
+              <div class="text-sm" style="color: var(--text-muted);">Este mes</div>
+            </div>
+            <div class="flex items-center text-sm" style="color: var(--color-accent);">
+              <ion-icon name="arrow-up-outline" class="mr-1"></ion-icon>
+              +12% vs mes anterior
+            </div>
+          </div>
+        </ion-card>
+      </div>
+    </section>
+
+    <!-- Sección: Alertas y Estados -->
+    <section class="mb-8 p-6 rounded-2xl border transition-all duration-300" 
+             style="background: var(--bg-secondary); border-color: var(--border-color);">
+      <h2 class="text-2xl font-semibold mb-6 pb-2" 
+          style="color: var(--text-primary); border-bottom: 2px solid #e74c3c;">⚠️ Alertas y Estados</h2>
+      
+      <div class="space-y-4">
+        <!-- Alerta de Éxito -->
+        <div class="p-4 rounded-lg border transition-all duration-300" 
+             style="background: var(--color-success-light); border-color: var(--color-success);">
+          <div class="flex items-center">
+            <ion-icon name="checkmark-circle-outline" class="text-xl mr-3" style="color: var(--color-success);"></ion-icon>
+            <div>
+              <h4 class="font-medium" style="color: var(--color-success);">¡Archivo subido exitosamente!</h4>
+              <p class="text-sm" style="color: var(--text-secondary);">Tu archivo se ha guardado correctamente en la nube.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerta de Advertencia -->
+        <div class="p-4 rounded-lg border transition-all duration-300" 
+             style="background: var(--color-warning-light); border-color: var(--color-warning);">
+          <div class="flex items-center">
+            <ion-icon name="warning-outline" class="text-xl mr-3" style="color: var(--color-warning);"></ion-icon>
+            <div>
+              <h4 class="font-medium" style="color: var(--color-warning);">Espacio de almacenamiento limitado</h4>
+              <p class="text-sm" style="color: var(--text-secondary);">Te quedan solo 2GB de espacio disponible.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerta de Error -->
+        <div class="p-4 rounded-lg border transition-all duration-300" 
+             style="background: var(--color-danger-light); border-color: var(--color-danger);">
+          <div class="flex items-center">
+            <ion-icon name="close-circle-outline" class="text-xl mr-3" style="color: var(--color-danger);"></ion-icon>
+            <div>
+              <h4 class="font-medium" style="color: var(--color-danger);">Error de conexión</h4>
+              <p class="text-sm" style="color: var(--text-secondary);">No se pudo conectar con el servidor. Intenta nuevamente.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerta de Información -->
+        <div class="p-4 rounded-lg border transition-all duration-300" 
+             style="background: var(--color-info-light); border-color: var(--color-info);">
+          <div class="flex items-center">
+            <ion-icon name="information-circle-outline" class="text-xl mr-3" style="color: var(--color-info);"></ion-icon>
+            <div>
+              <h4 class="font-medium" style="color: var(--color-info);">Nueva función disponible</h4>
+              <p class="text-sm" style="color: var(--text-secondary);">Ahora puedes compartir archivos directamente desde la aplicación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Lista de Archivos -->
+    <section class="mb-8 p-6 rounded-2xl border transition-all duration-300" 
+             style="background: var(--bg-secondary); border-color: var(--border-color);">
+      <h2 class="text-2xl font-semibold mb-6 pb-2" 
+          style="color: var(--text-primary); border-bottom: 2px solid var(--color-secondary);">📁 Lista de Archivos</h2>
+      
+      <div class="space-y-3">
+        <!-- Item de Archivo 1 -->
+        <ion-item class="rounded-lg transition-colors" 
+                  style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+          <div class="flex items-center w-full py-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-4" 
+                 style="background: rgba(231, 76, 60, 0.1);">
+              <ion-icon name="document-text-outline" style="color: #e74c3c;"></ion-icon>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-medium" style="color: var(--text-primary);">Presentación Q4.pdf</h4>
+              <p class="text-sm" style="color: var(--text-muted);">Subido hace 2 horas • 3.2 MB</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ion-button fill="clear" style="color: var(--text-muted);">
+                <ion-icon name="download-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" style="color: var(--text-muted);">
+                <ion-icon name="share-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" style="color: #e74c3c;">
+                <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </ion-item>
+
+        <!-- Item de Archivo 2 -->
+        <ion-item class="rounded-lg transition-colors" 
+                  style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+          <div class="flex items-center w-full py-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-4" 
+                 style="background: var(--color-primary-light);">
+              <ion-icon name="image-outline" style="color: var(--color-primary);"></ion-icon>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-medium" style="color: var(--text-primary);">Logo_empresa.png</h4>
+              <p class="text-sm" style="color: var(--text-muted);">Subido ayer • 847 KB</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ion-button fill="clear" style="color: var(--text-muted);">
+                <ion-icon name="download-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" style="color: var(--text-muted);">
+                <ion-icon name="share-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" style="color: #e74c3c;">
+                <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </ion-item>
+
+        <!-- Item de Archivo 3 -->
+        <ion-item class="rounded-lg transition-colors" 
+                  style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+          <div class="flex items-center w-full py-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-4" 
+                 style="background: var(--color-accent-light);">
+              <ion-icon name="document-outline" style="color: var(--color-accent);"></ion-icon>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-medium" style="color: var(--text-primary);">Datos_proyecto.xlsx</h4>
+              <p class="text-sm" style="color: var(--text-muted);">Subido hace 3 días • 1.5 MB</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <ion-button fill="clear" style="color: var(--text-muted);">
+                <ion-icon name="download-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" style="color: var(--text-muted);">
+                <ion-icon name="share-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" style="color: #e74c3c;">
+                <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+    </section>
+
+    <!-- Sección: Acciones Rápidas -->
+    <section class="mb-8 p-6 rounded-2xl border transition-all duration-300" 
+             style="background: var(--gradient-primary); border-color: var(--border-color);">
+      <h2 class="text-2xl font-semibold mb-6 pb-2" 
+          style="color: var(--text-white); border-bottom: 2px solid var(--text-white);">⚡ Acciones Rápidas</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Acción: Subir Archivo -->
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer" 
+               style="background: var(--color-success-light); border: 2px solid var(--color-success);">
+            <ion-icon name="cloud-upload-outline" class="text-2xl" style="color: var(--color-success);"></ion-icon>
+          </div>
+          <h4 class="font-medium text-sm" style="color: var(--text-white);">Subir Archivo</h4>
+        </div>
+
+        <!-- Acción: Nueva Carpeta -->
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer" 
+               style="background: var(--color-info-light); border: 2px solid var(--color-info);">
+            <ion-icon name="folder-outline" class="text-2xl" style="color: var(--color-info);"></ion-icon>
+          </div>
+          <h4 class="font-medium text-sm" style="color: var(--text-white);">Nueva Carpeta</h4>
+        </div>
+
+        <!-- Acción: Compartir -->
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer" 
+               style="background: rgba(255, 255, 255, 0.2); border: 2px solid var(--color-secondary);">
+            <ion-icon name="share-outline" class="text-2xl" style="color: var(--color-secondary);"></ion-icon>
+          </div>
+          <h4 class="font-medium text-sm" style="color: var(--text-white);">Compartir</h4>
+        </div>
+
+        <!-- Acción: Configuración -->
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center hover:scale-105 transition-transform cursor-pointer" 
+               style="background: var(--color-warning-light); border: 2px solid var(--color-warning);">
+            <ion-icon name="settings-outline" class="text-2xl" style="color: var(--color-warning);"></ion-icon>
+          </div>
+          <h4 class="font-medium text-sm" style="color: var(--text-white);">Configuración</h4>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</ion-content>

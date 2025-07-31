@@ -1,10 +1,80 @@
-<ion-header><ion-toolbar><ion-title>Login</ion-title></ion-toolbar></ion-header>
+<ion-content class="login-content">
+  <div class="login-container">
+    <!-- Logo/Header Section -->
+    <div class="header-section">
+      <div class="logo-container">
+        <ion-icon name="cloud-upload-outline" class="logo-icon"></ion-icon>
+        <h1 class="app-title text-4xl font-bold">SkyShare</h1>
+      </div>
+      <p class="welcome-text text-lg opacity-90">Bienvenido de vuelta</p>
+    </div>
 
-<ion-content class="ion-padding">
-  <form (submit)="handleLogin()">
-    <ion-input [(ngModel)]="email" name="email" label="Email" type="email" required></ion-input>
-    <ion-input [(ngModel)]="password" name="password" label="Password" type="password" required></ion-input>
-    <ion-button expand="block" type="submit">Ingresar</ion-button>
-    <ion-button fill="clear" routerLink="/register">Registrarme</ion-button>
-  </form>
+    <!-- Login Form -->
+    <div class="form-container">
+      <form (submit)="handleLogin()" class="login-form">
+        <div class="input-group">
+          <ion-item class="custom-input" lines="none">
+            <ion-icon name="mail-outline" slot="start" class="input-icon"></ion-icon>
+            <ion-input 
+              [(ngModel)]="email" 
+              name="email" 
+              placeholder="Correo electrónico" 
+              type="email" 
+              required
+              class="styled-input">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div class="input-group">
+          <ion-item class="custom-input" lines="none">
+            <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
+            <ion-input 
+              [(ngModel)]="password" 
+              name="password" 
+              placeholder="Contraseña" 
+              type="password" 
+              required
+              class="styled-input">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div class="forgot-password">
+          <ion-button fill="clear" size="small" class="forgot-link">
+            ¿Olvidaste tu contraseña?
+          </ion-button>
+        </div>
+
+        <ion-button 
+          expand="block" 
+          type="submit" 
+          class="login-button"
+          shape="round">
+          <ion-icon name="log-in-outline" slot="start"></ion-icon>
+          Iniciar Sesión
+        </ion-button>
+      </form>
+    </div>
+
+    <!-- Register Section -->
+    <div class="register-section">
+      <p class="register-text">¿No tienes una cuenta?</p>
+      <ion-button 
+        fill="outline" 
+        routerLink="/register" 
+        class="register-button"
+        shape="round">
+        <ion-icon name="person-add-outline" slot="start"></ion-icon>
+        Crear Cuenta
+      </ion-button>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+    </div>
+  </div>
 </ion-content>

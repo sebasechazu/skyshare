@@ -1,0 +1,36 @@
+/* ================================================================
+   Estilos mínimos para componentes Ionic
+   Los estilos de Tailwind usan las variables CSS globales automáticamente
+   ================================================================ */
+
+/* Solo estilos específicos para componentes Ionic que no se pueden hacer con Tailwind */
+ion-button {
+  --border-radius: 12px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+ion-input, ion-textarea {
+  --background: transparent;
+  --color: inherit;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+}
+
+ion-card {
+  --background: transparent;
+  margin: 0;
+  box-shadow: none;
+}
+
+ion-item {
+  --background: transparent;
+  --border-color: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  --inner-padding-start: 0;
+}
