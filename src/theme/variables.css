@@ -1,270 +1,64 @@
-/* ================================================================
-   Variables CSS para SkyShare - Tema Claro y Oscuro
-   ================================================================ */
-
-/* Variables base del tema claro */
+/* === PALETA PRINCIPAL (modo claro) === */
 :root {
-  /* === COLORES PRINCIPALES === */
-  --color-primary: #667eea;          /* Azul principal */
-  --color-primary-dark: #5a6fd8;     /* Azul más oscuro */
-  --color-primary-light: #8fa2ed;    /* Azul más claro */
-  
-  --color-secondary: #764ba2;        /* Violeta secundario */
-  --color-secondary-dark: #6a4190;   /* Violeta más oscuro */
-  --color-secondary-light: #8e6bb5;  /* Violeta más claro */
-  
-  --color-accent: #4ecdc4;           /* Celeste/Turquesa */
-  --color-accent-dark: #45b7b8;      /* Celeste más oscuro */
-  --color-accent-light: #6bccc4;     /* Celeste más claro */
-  
-  /* === COLORES DE ESTADO === */
-  --color-success: #27ae60;          /* Verde éxito */
-  --color-success-dark: #219a52;     /* Verde éxito oscuro */
-  --color-success-light: rgba(39, 174, 96, 0.1); /* Verde éxito claro */
-  
-  --color-danger: #e74c3c;           /* Rojo peligro */
-  --color-danger-dark: #c0392b;      /* Rojo peligro oscuro */
-  --color-danger-light: rgba(231, 76, 60, 0.1); /* Rojo peligro claro */
-  
-  --color-warning: #f39c12;          /* Naranja advertencia */
-  --color-warning-dark: #e67e22;     /* Naranja advertencia oscuro */
-  --color-warning-light: rgba(243, 156, 18, 0.1); /* Naranja advertencia claro */
-  
-  --color-info: #3498db;             /* Azul información */
-  --color-info-dark: #2980b9;        /* Azul información oscuro */
-  --color-info-light: rgba(52, 152, 219, 0.1); /* Azul información claro */
-  
-  /* === COLORES DE FONDO === */
-  --bg-primary: #ffffff;             /* Fondo principal blanco */
-  --bg-secondary: #f8f9fa;           /* Fondo secundario gris muy claro */
-  --bg-tertiary: #e9ecef;            /* Fondo terciario gris claro */
-  --bg-glass: rgba(255, 255, 255, 0.95); /* Glassmorphism claro */
-  --bg-overlay: rgba(255, 255, 255, 0.1); /* Overlay claro */
-  
-  /* === GRADIENTES === */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
-  --gradient-accent: linear-gradient(135deg, #667eea 0%, #4ecdc4 100%);
-  
-  /* === COLORES DE TEXTO === */
-  --text-primary: #2c3e50;           /* Texto principal oscuro */
-  --text-secondary: #34495e;         /* Texto secundario */
-  --text-muted: #6c757d;             /* Texto atenuado */
-  --text-light: #95a5a6;             /* Texto claro */
-  --text-white: #ffffff;             /* Texto blanco */
-  --text-on-primary: #ffffff;        /* Texto sobre color primario */
-  
-  /* === BORDES === */
-  --border-color: rgba(102, 126, 234, 0.1);
-  --border-color-hover: rgba(102, 126, 234, 0.3);
-  --border-color-focus: #667eea;
-  --border-color-light: rgba(255, 255, 255, 0.2);
-  
-  /* === SOMBRAS === */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 8px 20px rgba(102, 126, 234, 0.3);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
-  --shadow-focus: 0 0 0 3px rgba(102, 126, 234, 0.1);
-  --shadow-text: 0 2px 4px rgba(0, 0, 0, 0.3);
-  
-  /* === EFECTOS === */
-  --backdrop-blur: blur(10px);
-  --border-radius-sm: 8px;
-  --border-radius-md: 12px;
-  --border-radius-lg: 20px;
-  --border-radius-xl: 24px;
-  
-  /* === TRANSICIONES === */
-  --transition-fast: all 0.2s ease;
-  --transition-normal: all 0.3s ease;
-  --transition-slow: all 0.5s ease;
-  
-  /* === ESPACIADO === */
-  --spacing-xs: 8px;
-  --spacing-sm: 12px;
-  --spacing-md: 16px;
-  --spacing-lg: 20px;
-  --spacing-xl: 24px;
-  --spacing-2xl: 32px;
-  
-  /* === TIPOGRAFÍA === */
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 32px;
-  --font-size-4xl: 40px;
-  
-  /* === VARIABLES ESPECÍFICAS DE COMPONENTES === */
-  --input-bg: rgba(248, 249, 250, 0.8);
-  --input-bg-hover: rgba(248, 249, 250, 1);
-  --input-bg-focus: #ffffff;
-  --input-border: 2px solid var(--border-color);
-  --input-border-hover: 2px solid var(--border-color-hover);
-  --input-border-focus: 2px solid var(--border-color-focus);
-  --input-padding: 0.5rem;
-  --padding-start: 0.5rem;
-  --padding-end: 0.5rem;
-  --padding-top: 0.5rem;
-  --padding-bottom: 0.5rem;
-  
-  --button-height-sm: 40px;
-  --button-height-md: 45px;
-  --button-height-lg: 50px;
-  
-  /* === Z-INDEX === */
-  --z-background: 1;
-  --z-content: 2;
-  --z-overlay: 10;
-  --z-modal: 100;
-  --z-tooltip: 1000;
+  /* 🎨 Colores base */
+  --color-primary: #255c99;   
+  --color-secondary: #7ea3cc; 
+  --color-accent: #b3001b;    
+  --color-muted: #ccad8f;    
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-text: #262626;
+
+  /* ✅ Estados */
+  --color-success: #2ecc71;
+  --color-danger: #e74c3c;
+  --color-warning: #f39c12;
+  --color-info: #3498db;
+
+  /* 🖌️ Tipografía */
+  --text-primary: var(--color-text);
+  --text-secondary: #444;
+  --text-light: #888;
+  --text-on-primary: #ffffff;
+
+  /* 🧱 Fondos */
+  --bg-primary: var(--color-background);
+  --bg-secondary: var(--color-surface);
+  --bg-glass: rgba(255, 255, 255, 0.9);
+
+  /* 📏 Bordes y sombras */
+  --border-radius: 12px;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  /* ⚡ Transiciones */
+  --transition-default: all 0.3s ease;
 }
 
-/* Variables para tema oscuro */
+/* === 🌙 MODO OSCURO === */
 .dark {
-  /* === COLORES PRINCIPALES === */
-  --color-primary: #8fa2ed;          /* Azul más claro para contraste */
-  --color-primary-dark: #667eea;     /* Azul original */
-  --color-primary-light: #a5b4ef;    /* Azul aún más claro */
-  
-  --color-secondary: #9575cd;        /* Violeta más claro */
-  --color-secondary-dark: #764ba2;   /* Violeta original */
-  --color-secondary-light: #b39ddb;  /* Violeta muy claro */
-  
-  --color-accent: #6bccc4;           /* Celeste más claro */
-  --color-accent-dark: #4ecdc4;      /* Celeste original */
-  --color-accent-light: #8fd4d0;     /* Celeste muy claro */
-  
-  /* === COLORES DE ESTADO === */
-  --color-success: #2ecc71;          /* Verde éxito más claro */
-  --color-success-dark: #27ae60;     /* Verde éxito original */
-  --color-success-light: rgba(46, 204, 113, 0.1); /* Verde éxito claro */
-  
-  --color-danger: #e74c3c;           /* Rojo peligro igual */
-  --color-danger-dark: #c0392b;      /* Rojo peligro oscuro */
-  --color-danger-light: rgba(231, 76, 60, 0.1); /* Rojo peligro claro */
-  
-  --color-warning: #f1c40f;          /* Amarillo advertencia más claro */
-  --color-warning-dark: #f39c12;     /* Naranja advertencia original */
-  --color-warning-light: rgba(241, 196, 15, 0.1); /* Amarillo advertencia claro */
-  
-  --color-info: #5dade2;             /* Azul información más claro */
-  --color-info-dark: #3498db;        /* Azul información original */
-  --color-info-light: rgba(93, 173, 226, 0.1); /* Azul información claro */
-  
-  /* === COLORES DE FONDO === */
-  --bg-primary: #1a202c;             /* Fondo principal oscuro */
-  --bg-secondary: #2d3748;           /* Fondo secundario gris oscuro */
-  --bg-tertiary: #4a5568;            /* Fondo terciario gris medio */
-  --bg-glass: rgba(44, 62, 80, 0.95); /* Glassmorphism oscuro */
-  --bg-overlay: rgba(0, 0, 0, 0.2);   /* Overlay oscuro */
-  
-  /* === GRADIENTES === */
-  --gradient-primary: linear-gradient(135deg, #8fa2ed 0%, #9575cd 100%);
-  --gradient-secondary: linear-gradient(135deg, #6bccc4 0%, #5fb3ac 100%);
-  --gradient-accent: linear-gradient(135deg, #8fa2ed 0%, #6bccc4 100%);
-  
-  /* === COLORES DE TEXTO === */
-  --text-primary: #f7fafc;           /* Texto principal claro */
-  --text-secondary: #e2e8f0;         /* Texto secundario */
-  --text-muted: #a0aec0;             /* Texto atenuado */
-  --text-light: #718096;             /* Texto menos visible */
-  --text-white: #ffffff;             /* Texto blanco */
-  --text-on-primary: #1a202c;        /* Texto sobre color primario */
-  
-  /* === BORDES === */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-color-hover: rgba(255, 255, 255, 0.2);
-  --border-color-focus: #8fa2ed;
-  --border-color-light: rgba(255, 255, 255, 0.05);
-  
-  /* === SOMBRAS === */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
-  --shadow-focus: 0 0 0 3px rgba(143, 162, 237, 0.2);
-  --shadow-text: 0 2px 4px rgba(0, 0, 0, 0.6);
-  
-  /* === VARIABLES ESPECÍFICAS DE COMPONENTES === */
-  --input-bg: rgba(52, 73, 94, 0.8);
-  --input-bg-hover: rgba(52, 73, 94, 1);
-  --input-bg-focus: rgba(69, 90, 120, 0.9);
-  --input-border: 2px solid var(--border-color);
-  --input-border-hover: 2px solid var(--border-color-hover);
-  --input-border-focus: 2px solid var(--border-color-focus);
-  --input-padding: 0.5rem;
-  --padding-start: 0.5rem;
-  --padding-end: 0.5rem;
-  --padding-top: 0.5rem;
-  --padding-bottom: 0.5rem;
-}
+  --color-primary: #3977c1;
+  --color-secondary: #a7c7e7;
+  --color-accent: #ff4d4d;
+  --color-muted: #e6c9a9;
+  --color-background: #0f0f0f;
+  --color-surface: #1a1a1a;
+  --color-text: #f5f5f5;
 
-/* === UTILIDADES PARA ANIMACIONES === */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  --color-success: #2ecc71;
+  --color-danger: #e74c3c;
+  --color-warning: #f1c40f;
+  --color-info: #5dade2;
 
-@keyframes slideUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-}
+  --text-primary: var(--color-text);
+  --text-secondary: #ccc;
+  --text-light: #999;
+  --text-on-primary: #0f0f0f;
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-    opacity: 1;
-  }
-}
+  --bg-primary: var(--color-background);
+  --bg-secondary: var(--color-surface);
+  --bg-glass: rgba(0, 0, 0, 0.6);
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/* === CLASES UTILITARIAS === */
-.fade-in {
-  animation: fadeIn var(--transition-normal);
-}
-
-.slide-up {
-  animation: slideUp var(--transition-normal);
-}
-
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-
-.pulse {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-/* === RESPONSIVE BREAKPOINTS === */
-:root {
-  --breakpoint-sm: 480px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
 }

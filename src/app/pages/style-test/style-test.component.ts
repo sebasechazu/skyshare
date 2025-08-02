@@ -6,12 +6,15 @@ import {
   IonIcon,
   IonInput,
   IonTextarea,
-  IonCard,
-  IonItem
+  IonTabButton,
+  IonTabBar,
+  //IonTabs,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
   sunnyOutline,
+  homeOutline,
+  personOutline,
   moonOutline,
   refreshOutline,
   checkmarkOutline,
@@ -46,8 +49,9 @@ import {
     IonIcon,
     IonInput,
     IonTextarea,
-    IonCard,
-    IonItem
+    IonTabButton,
+    IonTabBar,
+    //IonTabs,
   ]
 })
 export class StyleTestComponent implements OnInit {
@@ -55,31 +59,33 @@ export class StyleTestComponent implements OnInit {
   isDark = false;
 
   constructor() {
-    // Registrar iconos
+ 
     addIcons({
-      'sunny-outline': sunnyOutline,
-      'moon-outline': moonOutline,
-      'refresh-outline': refreshOutline,
-      'checkmark-outline': checkmarkOutline,
-      'bookmark-outline': bookmarkOutline,
-      'trash-outline': trashOutline,
-      'cloud-upload-outline': cloudUploadOutline,
-      'heart-outline': heartOutline,
-      'lock-closed-outline': lockClosedOutline,
-      'document-text-outline': documentTextOutline,
-      'download-outline': downloadOutline,
-      'share-outline': shareOutline,
-      'mail-outline': mailOutline,
-      'location-outline': locationOutline,
-      'arrow-up-outline': arrowUpOutline,
-      'checkmark-circle-outline': checkmarkCircleOutline,
-      'warning-outline': warningOutline,
-      'close-circle-outline': closeCircleOutline,
-      'information-circle-outline': informationCircleOutline,
-      'image-outline': imageOutline,
-      'document-outline': documentOutline,
-      'folder-outline': folderOutline,
-      'settings-outline': settingsOutline
+      sunnyOutline,
+      moonOutline,
+      homeOutline,
+      personOutline,
+      refreshOutline,
+      checkmarkOutline,
+      bookmarkOutline,
+      trashOutline,
+      cloudUploadOutline,
+      heartOutline,
+      lockClosedOutline,
+      documentTextOutline,
+      downloadOutline,
+      shareOutline,
+      mailOutline,
+      locationOutline,
+      arrowUpOutline,
+      checkmarkCircleOutline,
+      warningOutline,
+      closeCircleOutline,
+      informationCircleOutline,
+      imageOutline,
+      documentOutline,
+      folderOutline,
+      settingsOutline
     });
   }
 

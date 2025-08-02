@@ -29,11 +29,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Variables CSS personalizadas - DESPUÉS de Tailwind para mayor especificidad */
-@import "./theme/variables.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
-
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -45,7 +40,11 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 /* @import "@ionic/angular/css/palettes/dark.system.css"; */
 
-/* Mover estilos exclusivos de Ionic al archivo `ionic-styles.css` */
+/* Variables CSS personalizadas - AL FINAL para máxima especificidad */
+@import "./theme/variables.css";
 @import "./theme/ionic-styles.css";
+
+/* Mover estilos exclusivos de Ionic al archivo `ionic-styles.css` */
+
 
 
